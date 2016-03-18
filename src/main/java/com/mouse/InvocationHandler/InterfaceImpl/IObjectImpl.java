@@ -2,6 +2,7 @@ package com.mouse.InvocationHandler.InterfaceImpl;
 
 import com.mouse.InvocationHandler.Interface.IObject;
 import com.mouse.InvocationHandler.TimeCalulatorHandler;
+import org.springframework.aop.framework.ProxyFactoryBean;
 
 import java.lang.reflect.Proxy;
 
@@ -14,6 +15,7 @@ public class IObjectImpl implements IObject {
         while(i<100000){
             i+=1;
         }
+//        int b=1/0;
     }
 
     public static void main(String[] args) {
@@ -22,5 +24,6 @@ public class IObjectImpl implements IObject {
         TimeCalulatorHandler timeCalulatorHandler=new TimeCalulatorHandler(iObject);
         IObject iObject1= (IObject) Proxy.newProxyInstance(iObject.getClass().getClassLoader(),iObject.getClass().getInterfaces(),timeCalulatorHandler);
         iObject1.run();
+
     }
 }
