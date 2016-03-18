@@ -14,7 +14,7 @@ public class TestSpringProxyFactory {
         ProxyFactory proxyFactory=new ProxyFactory();
         proxyFactory.setTarget(iObject1);
         proxyFactory.addAdvice(timeShowBeforAdvice);
-//        proxyFactory.addAdvice(new ExceptionAdvice());
+        proxyFactory.addAdvice(new ExceptionAdvice());
         IObjectImpl iObject2=(IObjectImpl)proxyFactory.getProxy();
         iObject2.run();
 

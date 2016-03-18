@@ -19,7 +19,7 @@ public class IObjectImpl implements IObject {
     }
 
     public static void main(String[] args) {
-        //²âÊÔjava seÌá¹©µÄ»ùÓÚ½Ó¿ÚµÄ¶¯Ì¬´úÀí
+        //æµ‹è¯•java seæä¾›çš„åŸºäºæ¥å£çš„åŠ¨æ€ä»£ç†
         IObject iObject=new IObjectImpl();
         TimeCalulatorHandler timeCalulatorHandler=new TimeCalulatorHandler(iObject);
         IObject iObject1= (IObject) Proxy.newProxyInstance(iObject.getClass().getClassLoader(),iObject.getClass().getInterfaces(),timeCalulatorHandler);
